@@ -8,7 +8,7 @@ def findMin(nums):
 
     while (nums[head] >= nums[tail]):
         # 找到两个子数组的分界线
-        if head == tail + 1:
+        if head == tail - 1:
             indexMid = tail
             break
         indexMid = head + (tail - head) // 2
@@ -30,3 +30,9 @@ def findMinInorder(nums, head, tail):
         if res >= nums[i]:
             res = nums[i]
     return res
+
+
+if __name__ == "__main__":
+    nums = [4, 5, 1, 2, 3]
+    res = findMin(nums)
+    print(res)
